@@ -22,7 +22,7 @@
 
         <!-- Input jumlah_foto hanya muncul jika pilih Paket -->
         <div x-show="jenis === 'paket'">
-            <label class="block text-sm font-medium">Jumlah Foto</label>
+            <label class="block text-sm font-medium">Jumlah Fotomi</label>
             <input type="number" name="jumlah_foto" class="w-full rounded-md border-gray-300">
         </div>
 

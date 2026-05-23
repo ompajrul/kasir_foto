@@ -24,6 +24,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
     Route::get('/booking/create', [BookingController::class, 'create'])->name('booking.create');
     Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
+
+    Route::get('/booking/{id}/edit', [BookingController::class, 'edit'])->name('booking.edit');
+    Route::put('/booking/{id}', [BookingController::class, 'update'])->name('booking.update');
+    
+    Route::delete('/booking/{id}', [BookingController::class, 'destroy'])->name('booking.destroy');
     // Nanti tambah Route::post untuk simpan data di sini
 
     // Halaman Kasir (Pembayaran)
@@ -45,3 +50,7 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
