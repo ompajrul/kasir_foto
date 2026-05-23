@@ -54,6 +54,7 @@
                 <a href="{{ route('booking.index') }}" class="block px-4 py-2 rounded-lg hover:bg-slate-800">Booking</a>
                 <a href="{{ route('kasir.index') }}" class="block px-4 py-2 rounded-lg hover:bg-slate-800">Kasir</a>
                 <a href="{{ route('data_transaksi.index') }}" class="block px-4 py-2 rounded-lg hover:bg-slate-800">data transaksi</a>
+                <a href="{{ route('item.index') }}" class="block px-4 py-2 rounded-lg hover:bg-slate-800">data Item</a>
             </nav>
 
             <!-- Dropdown Profile yang tadi kita bahas (Model Accordion) -->

@@ -127,7 +127,9 @@
 
             <!-- Bagian Kanan (Bisa kosong jika dropdown pindah ke sidebar) -->
             <div class="flex items-center">
-                <span class="text-xs text-gray-400">Admin Panel</span>
+                 <span class="text-sm text-slate-500 px-3">{{ now()->format('d M Y') }}</span>  
+                 
+                 <span class="font-black text-slate-500">{{ now()->format('H:i') }}</span>
             </div>
         </div>
     </div>

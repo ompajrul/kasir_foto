@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookingController;
@@ -21,6 +22,8 @@ Route::middleware('auth')->group(function () {
 
         // Halaman Booking (Pencatatan Coser)
     Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
+    Route::get('/booking/create', [BookingController::class, 'create'])->name('booking.create');
+    Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
     // Nanti tambah Route::post untuk simpan data di sini
 
     // Halaman Kasir (Pembayaran)
@@ -28,6 +31,14 @@ Route::middleware('auth')->group(function () {
        
     // data transaksi   
        Route::get('/transaksi', [TransaksiController::class, 'index'])->name('data_transaksi.index');
+   
+       // data item 
+         
+       Route::get('/item', [ItemController::class, 'index'])->name('item.index');
+       Route::get('/item/create', [ItemController::class, 'create'])->name('item.create');
+       Route::post('/item/store', [ItemController::class, 'store'])->name('item.store');
+       Route::post('/item/destroy/{item}', [ItemController::class, 'destroy'])->name('item.destroy');
+       Route::put('/item/{item}', [ItemController::class, 'update'])->name('item.update');
 
    
 });
