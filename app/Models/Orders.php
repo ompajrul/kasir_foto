@@ -48,4 +48,13 @@ class Orders extends Model
     {
         return $this->hasMany(Details::class, 'id_order');
     }
+    public function totalHarga()
+    {
+        // Menjumlahkan kolom 'harga_satuan' dari relasi details
+        return $this->details->sum('harga_satuan');
+    }
+    public function transaksi()
+    {
+        return $this->hasOne(Transaksi::class, 'id_order');
+    }
 }

@@ -3,23 +3,21 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Jika email ini belum ada di DB, Laravel akan otomatis membuatnya langsung jadi Super Admin
+        User::firstOrCreate(
+            ['email' => 'admin@hoshigraph.com'], 
+            [
+                'name'     => 'Admin Besar',
+                'password' => Hash::make('AdminBesar123'), // Silakan ganti password-mu
+                'role'     => 'super_admin',            // Akun utama pemegang kendali
+            ]
+        );
     }
 }
